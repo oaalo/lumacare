@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="search.css" />
 </head>
 <body>
   <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
@@ -52,7 +53,7 @@
 
     <section class="chat-panel glass">
       <header class="chat-header">
-        <div><span class="live-dot"></span><strong>مساعد السياسات السريرية</strong><small>إجابات مستندة إلى المصادر المعتمدة</small></div>
+        <div><span class="live-dot"></span><strong>مساعد السياسات السريرية</strong><small id="searchStatus">البحث المحلي جاهز — يتطور عند أول سؤال</small></div>
         <div class="source-count">ملف معتمد <b>1</b></div>
       </header>
       <div id="messages" class="messages">
@@ -69,7 +70,7 @@
       </div>
       <form id="chatForm" class="composer">
         <textarea id="question" rows="1" placeholder="اكتب سؤالك عن السياسات..." aria-label="السؤال"></textarea>
-        <button type="submit" aria-label="إرسال">↑</button>
+        <button id="sendButton" type="submit" aria-label="إرسال">↑</button>
         <div class="composer-meta"><span>الإجابات من الملفات المعتمدة فقط</span><span>Enter للإرسال</span></div>
       </form>
     </section>
