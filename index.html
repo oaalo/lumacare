@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#071426" />
+  <meta name="description" content="LumaCare - مساعد المعرفة السريرية لمنسوبي وزارة الصحة" />
+  <title>LumaCare | مساعد المعرفة السريرية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main id="loginView" class="login-shell">
+    <section class="login-card glass">
+      <div class="brand-lockup">
+        <img src="assets/lumacare-logo.png" alt="شعار LumaCare" class="logo" />
+        <div><span class="eyebrow">المعرفة الأقرب لقرارك</span><h1>LumaCare</h1></div>
+      </div>
+      <div class="login-copy">
+        <div class="security-badge">بوابة مخصصة لمنسوبي وزارة الصحة</div>
+        <h2>ابحث في السياسات بثقة،<br><span>ووصل للمعلومة أسرع.</span></h2>
+        <p>مساعد معرفي يجيب من الملفات المعتمدة فقط، ويحتفظ بسجل محادثاتك للعودة إليه لاحقًا.</p>
+      </div>
+      <form id="loginForm" novalidate>
+        <label for="email">البريد الوزاري</label>
+        <div class="email-field" id="emailField">
+          <span class="mail-icon">✦</span>
+          <input id="email" type="email" autocomplete="email" placeholder="name@moh.gov.sa" aria-describedby="emailError" required />
+        </div>
+        <p id="emailError" class="error" role="alert"></p>
+        <button class="primary-button" type="submit"><span>الدخول إلى LumaCare</span><span>←</span></button>
+      </form>
+      <div class="trust-row"><span>🔒 جلسة خاصة</span><span>◉ مصادر موثقة</span><span>✓ محفوظ تلقائيًا</span></div>
+    </section>
+  </main>
+
+  <main id="appView" class="app-shell hidden">
+    <aside class="sidebar glass">
+      <div class="side-brand"><img src="assets/lumacare-logo.png" alt="" /><strong>LumaCare</strong></div>
+      <button id="newChat" class="new-chat">＋ محادثة جديدة</button>
+      <div class="history-head"><span>المحادثات</span><button id="clearHistory" title="مسح السجل">مسح</button></div>
+      <div id="historyList" class="history-list"></div>
+      <div class="profile-card">
+        <div class="avatar" id="avatar">M</div>
+        <div><strong id="profileName">مستخدم الوزارة</strong><small id="profileEmail"></small></div>
+        <button id="logout" title="تسجيل الخروج">↪</button>
+      </div>
+    </aside>
+
+    <section class="chat-panel glass">
+      <header class="chat-header">
+        <div><span class="live-dot"></span><strong>مساعد السياسات السريرية</strong><small>إجابات مستندة إلى المصادر المعتمدة</small></div>
+        <div class="source-count">ملف معتمد <b>1</b></div>
+      </header>
+      <div id="messages" class="messages">
+        <article class="welcome-message">
+          <div class="spark">✦</div>
+          <h2>أهلًا بك في LumaCare</h2>
+          <p>اسأل عن سياسة التعرف الصحيح على المريض، وسأجيبك مع الإشارة إلى المصدر.</p>
+          <div class="suggestions">
+            <button>ما المعرّفات المطلوبة للتحقق من هوية المريض؟</button>
+            <button>ماذا نفعل إذا رفض المريض ارتداء سوار التعريف؟</button>
+            <button>كيف يتم تعريف المريض فاقد الوعي؟</button>
+          </div>
+        </article>
+      </div>
+      <form id="chatForm" class="composer">
+        <textarea id="question" rows="1" placeholder="اكتب سؤالك عن السياسات..." aria-label="السؤال"></textarea>
+        <button type="submit" aria-label="إرسال">↑</button>
+        <div class="composer-meta"><span>الإجابات من الملفات المعتمدة فقط</span><span>Enter للإرسال</span></div>
+      </form>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
