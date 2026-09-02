@@ -1,0 +1,17 @@
+.composer > button:disabled {
+  cursor: wait;
+  opacity: .6;
+}
+
+.search-loading .live-dot {
+  animation: search-pulse 1s infinite;
+}
+
+.search-ready #searchStatus {
+  color: #83dcd6;
+}
+
+@keyframes search-pulse {
+  50% { opacity: .3; transform: scale(.75); }
+}
+
