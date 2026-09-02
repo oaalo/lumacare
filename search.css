@@ -15,3 +15,10 @@
   50% { opacity: .3; transform: scale(.75); }
 }
 
+.header-actions { display:flex; align-items:center; gap:10px; }
+.header-actions > button { border:1px solid rgba(156,211,226,.2); background:rgba(255,255,255,.04); color:#d9fffb; border-radius:11px; padding:8px 12px; cursor:pointer; font-family:inherit; }
+.english .sidebar, .english .chat-panel { direction:ltr; }
+.english .history-item, .english .new-chat, .english .suggestions button { text-align:left; }
+.english .profile-card small { text-align:left; }
+.global-lang { position:fixed; top:14px; inset-inline-end:18px; z-index:20; border:1px solid rgba(156,211,226,.25); background:#0b2338; color:#d9fffb; border-radius:11px; padding:8px 13px; cursor:pointer; font-family:inherit; box-shadow:0 8px 24px rgba(0,0,0,.25); }
+
