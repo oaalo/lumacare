@@ -22,7 +22,7 @@
         <div><span class="eyebrow">المعرفة الأقرب لقرارك</span><h1>LumaCare</h1></div>
       </div>
       <div class="login-copy">
-        <div class="security-badge">بوابة مخصصة لمنسوبي وزارة الصحة</div>
+        <div class="security-badge">نسخة تجريبية لمنسوبي وزارة الصحة</div>
         <h2>ابحث في السياسات بثقة،<br><span>ووصل للمعلومة أسرع.</span></h2>
         <p>مساعد معرفي يجيب من الملفات المعتمدة فقط، ويحتفظ بسجل محادثاتك للعودة إليه لاحقًا.</p>
       </div>
@@ -35,7 +35,7 @@
         <p id="emailError" class="error" role="alert"></p>
         <button class="primary-button" type="submit"><span>الدخول إلى LumaCare</span><span>←</span></button>
       </form>
-      <div class="trust-row"><span>🔒 جلسة خاصة</span><span>◉ مصادر موثقة</span><span>✓ محفوظ تلقائيًا</span></div>
+      <div class="trust-row"><span>جلسة تجريبية</span><span>◉ مصادر موثقة</span><span>محفوظ في هذا المتصفح</span></div>
     </section>
   </main>
 
@@ -54,8 +54,8 @@
 
     <section class="chat-panel glass">
       <header class="chat-header">
-        <div><span class="live-dot"></span><strong>مساعد السياسات السريرية</strong><small id="searchStatus">البحث المحلي جاهز — يتطور عند أول سؤال</small></div>
-        <div class="header-actions"><div class="source-count">ملف معتمد <b>1</b></div></div>
+        <div><span class="live-dot"></span><strong>مساعد السياسات السريرية</strong><small id="searchStatus">جاري التحقق من اتصال المحادثة…</small></div>
+        <div class="header-actions"><div class="source-count">سياسة في المكتبة <b>1</b></div></div>
       </header>
       <div id="messages" class="messages">
         <article class="welcome-message">
@@ -70,7 +70,7 @@
         </article>
       </div>
       <form id="chatForm" class="composer">
-        <textarea id="question" rows="1" placeholder="اكتب سؤالك عن السياسات..." aria-label="السؤال"></textarea>
+        <textarea id="question" rows="1" maxlength="4000" placeholder="اكتب سؤالك عن السياسات..." aria-label="السؤال"></textarea>
         <button id="sendButton" type="submit" aria-label="إرسال">↑</button>
         <div class="composer-meta"><span>الإجابات من الملفات المعتمدة فقط</span><span>Enter للإرسال</span></div>
       </form>

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "patient-identification-1",
+    "title": "Correct Patient Identification Policy",
+    "section": "Correct Patient Identification Policy — Sections 4.12, 4.14, 4.18 and 5.6",
+    "ar": "يجب التحقق من هوية المريض قبل تقديم أي رعاية أو تدخل. ويشمل ذلك قبل إعطاء الأدوية، وبدء الفحوصات أو العلاج، وسحب عينات سوائل الجسم، ونقل الدم ومشتقاته، والعمليات والإجراءات التدخلية، ونقل المريض، والأشعة والتصوير. كما يتم التحقق عند الدخول، وتُجرى مطابقة نهائية ضمن الـ Time-Out قبل بدء الإجراء مباشرة.",
+    "en": "Patient identity must be verified before any care or intervention. This includes medication administration, examinations or treatment, collection of body-fluid samples, blood or blood-product administration, surgery and invasive procedures, patient transfer, and imaging. Verification is also required at admission, with a final check during the Time-Out immediately before a procedure begins."
+  },
+  {
+    "id": "patient-identification-2",
+    "title": "Correct Patient Identification Policy",
+    "section": "Correct Patient Identification Policy — Sections 2.6, 3.5 and 4.3",
+    "ar": "يجب التحقق من هوية المريض باستخدام معرّفين فريدين على الأقل. تشمل البيانات المعتمدة الاسم الكامل ورقم السجل الطبي، مع التحقق كذلك من تاريخ الميلاد والعمر حسب الإجراء. لا يجوز استخدام رقم الغرفة أو السرير للتعريف بالمريض.",
+    "en": "The patient must be identified using at least two unique identifiers. Approved details include the patient's full name and medical record number, with date of birth and age also checked as required. A room or bed number must never be used to identify a patient."
+  },
+  {
+    "id": "patient-identification-3",
+    "title": "Correct Patient Identification Policy",
+    "section": "Correct Patient Identification Policy — Sections 4.26.7 and 4.27",
+    "ar": "إذا رفض المريض ارتداء سوار التعريف، يجب شرح المخاطر له وتوثيق النقاش وسبب الرفض في السجل الطبي. ثم تُستخدم وسيلة تعريف بديلة مناسبة بعد موافقة المريض أو قريبه، مع زيادة اليقظة قبل أي إجراء أو تدخل.",
+    "en": "If a patient refuses an identification wristband, explain the risks and document the discussion and reason for refusal in the health record. Use an appropriate alternative identification method with consent and apply increased vigilance before any procedure or intervention."
+  },
+  {
+    "id": "patient-identification-4",
+    "title": "Correct Patient Identification Policy",
+    "section": "Correct Patient Identification Policy — Sections 4.9–4.11 and 4.26.5",
+    "ar": "يُسجّل المريض المجهول أو فاقد الوعي بنظام ترقيم مثل UNKNOWN #1 متبوعًا برقم سجل طبي فريد، ويجب أن يرتدي سوار تعريف. إذا تعذر عليه تأكيد هويته، يتحقق ممرضَان مسجلان من الهوية قبل وضع السوار، ما لم يوجد ممثل يعرف المريض جيدًا.",
+    "en": "An unknown or unconscious patient is registered using a numbering system such as UNKNOWN #1 followed by a unique medical record number and must wear an identification wristband. If the patient cannot confirm their identity, two registered nurses verify it before the band is applied unless a representative who knows the patient is present."
+  },
+  {
+    "id": "patient-identification-5",
+    "title": "Correct Patient Identification Policy",
+    "section": "Correct Patient Identification Policy — Sections 4.15–4.18",
+    "ar": "عند النقل الداخلي يتحقق المستلم من سوار المريض ويراجع السجل الطبي. وعند استقبال مريض من منشأة أخرى يوضع سوار المنشأة المستقبلة فور وصوله ويزال السوار السابق. قبل الإجراء الجراحي يتم التحقق النهائي ضمن عملية الـ Time-Out.",
+    "en": "During an internal transfer, the receiving staff member checks the patient's wristband and reviews the medical record. A patient arriving from another facility receives the new facility's wristband immediately and the previous band is removed. Final verification is completed during the Time-Out immediately before a procedure."
+  },
+  {
+    "id": "patient-identification-6",
+    "title": "Correct Patient Identification Policy",
+    "section": "Correct Patient Identification Policy — Sections 4.22.1–4.22.2",
+    "ar": "في قسم الطوارئ، يجب طباعة سوار التعريف أثناء التسجيل ووضعه فورًا لكل مريض يُوجّه إلى الملاحظة أو العلاج أو الإنعاش، بما في ذلك من ينتظر نقله من منطقة الإسعاف. أما الحالات المتنقلة أو البسيطة فيُستخدم السوار عند الحاجة المهنية أو قبل التهدئة الإجرائية أو حصار الأعصاب.",
+    "en": "In the Emergency Department, an identification wristband must be printed during registration and applied immediately for every patient directed to observation, treatment, or resuscitation, including patients awaiting movement from the ambulance bay. For ambulatory or minor-stream patients, a band is used when professionally appropriate or before procedural sedation or nerve blocks."
+  },
+  {
+    "id": "patient-identification-7",
+    "title": "Correct Patient Identification Policy",
+    "section": "Correct Patient Identification Policy — Sections 4.23.1–4.23.4",
+    "ar": "عند وصول المراجع للعيادة الخارجية وتسجيل حضوره، يطلب موظف الاستقبال من المريض أو مقدم الرعاية ذكر الاسم الكامل ورقم الهوية الوطنية أو الإقامة أو الجواز وتاريخ الميلاد، ثم يطابقها مع نظام المعلومات الصحية والملاحظات وبطاقة الموعد أو خطاب الإحالة. ويتحقق الفريق السريري من الهوية عند بداية كل فحص سريري.",
+    "en": "At outpatient arrival and check-in, reception asks the patient or caregiver to state the full name, National ID/Iqama/passport number, and date of birth, then validates these against the health information system, available notes, and appointment card or referral letter. Clinical staff verify identity again at the start of each clinical examination."
+  },
+  {
+    "id": "patient-identification-8",
+    "title": "Correct Patient Identification Policy",
+    "section": "Correct Patient Identification Policy — Sections 4.28–4.29",
+    "ar": "عند العثور على مريض بلا سوار، يُبلّغ الممرض المسؤول فورًا ليتم التحقق الصحيح من الهوية ووضع سوار جديد. وإذا أزيل السوار أو أصبح مبللًا أو باهتًا أو تالفًا أو غير مقروء، فيجب استبداله فورًا. وإذا تعذر الاستبدال الفوري، توضع وسيلة تعريف بديلة واضحة ويُوثق السبب في ملاحظات المريض.",
+    "en": "If a patient is found without a wristband, inform the assigned nurse immediately so the patient can be correctly identified and a new band applied. A removed, wet, faded, damaged, or unreadable band must be replaced immediately. If immediate replacement is impossible, establish a clear alternative identification method and document the reason in the patient notes."
+  }
+]
