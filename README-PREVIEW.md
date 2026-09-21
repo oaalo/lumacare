@@ -1,16 +1,5 @@
-# LumaCare
+# LATYAI preview
 
-Arabic-first clinical policy knowledge assistant prototype.
+See [README.md](README.md) for the current AI MVP, activation steps and limitations.
 
-## Current preview
-
-- Ministry of Health email-domain validation (`@moh.gov.sa` only)
-- Responsive login and chat experience
-- Per-email browser-local conversation history
-- Answers grounded in the first approved patient-identification policy
-- Source references and explicit no-answer behavior
-
-## Production requirements
-
-The current branch is a reviewable front-end prototype. Before production, connect verified email authentication, server-side domain enforcement, durable encrypted conversation storage, and a private document search service. Do not publish source policy PDFs or signature pages in this public repository.
-
+The MOH email form is a preview label, not verified authentication. GitHub Pages cannot run the server-side AI endpoint. The library preserves existing summaries; original source PDFs and verified page numbers have not been added.

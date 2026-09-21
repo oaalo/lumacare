@@ -1,0 +1,28 @@
+{
+  "name": "LATYAI preview",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "forwardPorts": [
+    3000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "LATYAI",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "npm run check && npm test",
+  "postAttachCommand": "node scripts/start-preview.mjs",
+  "secrets": {
+    "GROQ_API_KEY": {
+      "description": "Paste your Groq Free API key. It stays in Codespaces secrets, not repository files.",
+      "documentationUrl": "https://console.groq.com/keys"
+    }
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "CODESPACES.md"
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "latyai",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "test": "node --test",
+    "check": "node --check app.js && node --check server/index.mjs && node --check server/chat.mjs"
+  }
+}
