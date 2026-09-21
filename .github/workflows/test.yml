@@ -1,4 +1,4 @@
-name: Test LumaCare
+name: Test LATYAI
 on:
   push:
     branches: ["codex/grounded-ai-chat"]

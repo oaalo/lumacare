@@ -11,14 +11,14 @@ const assets = new Map([
   ["/app.js", ["app.js", "text/javascript; charset=utf-8"]],
   ["/styles.css", ["styles.css", "text/css; charset=utf-8"]],
   ["/search.css", ["search.css", "text/css; charset=utf-8"]],
-  ["/assets/lumacare-logo.png", ["assets/lumacare-logo.png", "image/png"]]
+  ["/assets/latyai-logo.svg", ["assets/latyai-logo.svg", "image/svg+xml"]]
 ]);
 
 export function createApp(env = process.env, fetchImpl = fetch) {
   let inFlight = 0;
   let windowStart = Date.now(), requestCount = 0;
   const port = Number(env.PORT || 3000);
-  const origin = env.LUMACARE_ORIGIN || "http://127.0.0.1:" + port;
+  const origin = env.LATYAI_ORIGIN || "http://127.0.0.1:" + port;
   return createServer(async (req, res) => {
     const json = (status, data) => {
       res.writeHead(status, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" });
@@ -68,5 +68,5 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT || 3000);
   if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error("Invalid PORT");
   // Local preview only. Put a verified access gateway in front before hospital rollout.
-  createApp().listen(port, "127.0.0.1", () => console.log("LumaCare: http://127.0.0.1:" + port));
+  createApp().listen(port, "127.0.0.1", () => console.log("LATYAI: http://127.0.0.1:" + port));
 }

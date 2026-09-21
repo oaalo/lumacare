@@ -1,4 +1,4 @@
-# LumaCare preview
+# LATYAI preview
 
 See [README.md](README.md) for the current AI MVP, activation steps and limitations.
 

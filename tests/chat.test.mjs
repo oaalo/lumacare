@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { buildRequest, readAnswer, validateInput, chat, ChatError } from "../server/chat.mjs";
 
 const knowledge=[{id:"policy-1",title:"Policy",section:"Section 1",ar:"يجب مراجعة هوية المريض قبل تقديم أي رعاية أو تدخل.",en:"Verify the patient's identity before providing any care or intervention."}];
-const env={OPENAI_API_KEY:"test-only-key",OPENAI_MODEL:"test-model"};
+const env={GROQ_API_KEY:"test-only-key",GROQ_MODEL:"test-model"};
 const wrap = data => ({status:"completed",output:[{type:"message",role:"assistant",content:[{type:"output_text",text:JSON.stringify(data)}]}]});
 const valid=()=>({status:"answered",paragraphs:[{text:"Check identity before care.",evidence:[{sourceId:"policy-1",quote:knowledge[0].en}]}]});
 
@@ -14,12 +14,12 @@ test("rejects blank, oversized and elevated-role input",()=>{
 test("passes the whole question, bounded conversation context and server knowledge",()=>{
  const question="المريض ما يبي السوار، وش أسوي؟ وهل أوثق؟";
  const request=buildRequest(validateInput({question,history:[{role:"user",text:"المريض في الطوارئ"}]}),env,knowledge);
- assert.equal(request.input.at(-1).content,question);
- assert.equal(request.input[1].content,"المريض في الطوارئ");
- assert.match(request.input[0].content,/policy-1/);
- assert.equal(request.store,false);
+ assert.equal(request.messages.at(-1).content,question);
+ assert.equal(request.messages[2].content,"المريض في الطوارئ");
+ assert.match(request.messages[1].content,/policy-1/);
+ assert.equal(request.store,undefined);
  assert.equal(request.tools,undefined);
- assert.equal(request.text.format.strict,true);
+ assert.equal(request.response_format.json_schema.strict,true);
 });
 test("returns verified section and quoted evidence",()=>{
  const result=readAnswer(wrap(valid()),"en",knowledge);
@@ -62,14 +62,18 @@ test("missing configuration does not call a provider",async()=>{
 test("provider key stays on the server; client knowledge cannot replace library",async()=>{
  let sent;
  const result=await chat({question:"test",knowledge:[{id:"evil"}]},env,knowledge,async(url,options)=>{
-  assert.equal(url,"https://api.openai.com/v1/responses");sent=JSON.parse(options.body);
+  assert.equal(url,"https://api.groq.com/openai/v1/chat/completions");sent=JSON.parse(options.body);
   assert.equal(options.headers.Authorization,"Bearer test-only-key");
-  return {ok:true,json:async()=>wrap(valid())};
+  return {ok:true,json:async()=>({choices:[{finish_reason:"stop",message:{content:JSON.stringify(valid())}}]})};
  });
  assert.equal(result.status,"answered");assert.ok(!JSON.stringify(sent).includes("evil"));
- assert.ok(!JSON.stringify(result).includes(env.OPENAI_API_KEY));
+ assert.ok(!JSON.stringify(result).includes(env.GROQ_API_KEY));
 });
 test("provider errors are sanitized",async()=>{
  await assert.rejects(chat({question:"test"},env,knowledge,async()=>({ok:false,status:401})),e=>e.code==="service_unavailable");
  await assert.rejects(chat({question:"test"},env,knowledge,async()=>({ok:false,status:429})),e=>e.status===429);
+});
+
+test("Groq truncation is not shown as an answer",async()=>{
+ await assert.rejects(chat({question:"test"},env,knowledge,async()=>({ok:true,json:async()=>({choices:[{finish_reason:"length",message:{content:"{}"}}]})})),e=>e.code==="incomplete_response");
 });
