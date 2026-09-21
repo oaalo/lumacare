@@ -14,11 +14,23 @@ const assets = new Map([
   ["/assets/latyai-logo.svg", ["assets/latyai-logo.svg", "image/svg+xml"]]
 ]);
 
+export function previewAccess(env, port) {
+  const local = "http://127.0.0.1:" + port;
+  const codespace = env.CODESPACES === "true" && /^[a-zA-Z0-9-]+$/.test(env.CODESPACE_NAME || "") &&
+    /^[a-zA-Z0-9.-]+$/.test(env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN || "");
+  const origin = env.LATYAI_ORIGIN || (codespace
+    ? "https://" + env.CODESPACE_NAME + "-" + port + "." + env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN
+    : local);
+  const hosts = [new URL(origin).host];
+  if (codespace) hosts.push("127.0.0.1:" + port, "localhost:" + port);
+  return { origin, hosts };
+}
+
 export function createApp(env = process.env, fetchImpl = fetch) {
   let inFlight = 0;
   let windowStart = Date.now(), requestCount = 0;
   const port = Number(env.PORT || 3000);
-  const origin = env.LATYAI_ORIGIN || "http://127.0.0.1:" + port;
+  const { origin, hosts } = previewAccess(env, port);
   return createServer(async (req, res) => {
     const json = (status, data) => {
       res.writeHead(status, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" });
@@ -26,7 +38,7 @@ export function createApp(env = process.env, fetchImpl = fetch) {
     };
     try {
       const url = new URL(req.url, origin);
-      if (req.headers.host !== new URL(origin).host ||
+      if (!hosts.includes(req.headers.host) ||
           (req.headers.origin && req.headers.origin !== origin)) return json(403, { error: "forbidden_origin" });
       if (req.method === "GET" && url.pathname === "/api/status")
         return json(200, { configured: configured(env) });
